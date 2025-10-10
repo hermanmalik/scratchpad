@@ -1,0 +1,15 @@
+[Unit]
+Description=Shared Scratchpad Server
+After=network.target
+
+[Service]
+Type=simple
+User=webserver
+Group=webserver
+WorkingDirectory=/var/www/scratchpad
+ExecStart=/var/www/scratchpad/scratchpad
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
