@@ -16,12 +16,13 @@ pipeline {
         stage('Test') {
             steps {
                 // sh 'go build'
+                sh 'echo PLACEHOLDER'
             }
         }
         stage('Deploy') {
             steps {
                 // sh 'deploy.sh'
-                sh 'touch TESTING'
+                sh 'echo PLACEHOLDER'
             }
         }
     }
