@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+                // sh './replace-url' main.go
+            }
+        }
+        stage('Build') {
+            steps {
+                // sh 'mv scratchpad scratchpad.old'
+                sh 'go build -o scratchpad'
+            }
+        }
+        stage('Test') {
+            steps {
+                // sh 'go build'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // sh 'deploy.sh'
+                sh 'touch TESTING'
+            }
+        }
+    }
+}
